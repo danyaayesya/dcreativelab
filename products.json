@@ -1,0 +1,251 @@
+{
+  "featured": {
+    "title": " Video Silibus KAFA JAKIM",
+    "description": "PROMOSI 50% DISKAUN! Video Silibus KAFA JAKIM - 6 Subjek Tahun 1-5",
+    "url": "https://pesanabi.com/order/form/VideoKafaByTahun/1281",
+    "image": "",
+    "icon": "✧"
+  },
+  "products": [
+    {
+      "id": "learn-01",
+      "title": "Nota KAFA JAKIM Tahun 1-5 (6 Subjek)",
+      "category": "learning",
+      "icon": "📚",
+      "tag": "Learning pick",
+      "description": "Bahan ulang kaji dan sokongan pembelajaran.",
+      "url": "https://pesanabi.com/order/form/NotaKafa/1281",
+      "image": "images/notakafa.png"
+    },
+    {
+      "id": "learn-02",
+      "title": "Gems Koleksi GambarMI",
+      "category": "learning",
+      "icon": "🧩",
+      "tag": "Creative learning",
+      "description": "Idea visual dan bahan untuk aktiviti pendidikan.",
+      "url": "https://example.com/affiliate-02",
+      "image": ""
+    },
+    {
+      "id": "learn-03",
+      "title": "Iqra Blocks",
+      "category": "learning",
+      "icon": "🔤",
+      "tag": "Kids learning",
+      "description": "Aktiviti huruf dan pembelajaran awal kanak-kanak.",
+      "url": "https://example.com/affiliate-03",
+      "image": ""
+    },
+    {
+      "id": "learn-04",
+      "title": "Edumi Learning Resources",
+      "category": "learning",
+      "icon": "🎓",
+      "tag": "Education",
+      "description": "Sumber pembelajaran untuk keluarga dan pendidik.",
+      "url": "https://example.com/affiliate-04",
+      "image": ""
+    },
+    {
+      "id": "learn-05",
+      "title": "Worksheet Collection",
+      "category": "learning",
+      "icon": "✏️",
+      "tag": "Printable",
+      "description": "Lembaran aktiviti untuk sesi belajar di rumah.",
+      "url": "https://example.com/affiliate-05",
+      "image": ""
+    },
+    {
+      "id": "learn-06",
+      "title": "Arabic Learning Cards",
+      "category": "learning",
+      "icon": "🌙",
+      "tag": "Bahasa Arab",
+      "description": "Bahan visual untuk membantu belajar kosa kata.",
+      "url": "https://example.com/affiliate-06",
+      "image": ""
+    },
+    {
+      "id": "home-01",
+      "title": "Thermomix TM7",
+      "category": "home",
+      "icon": "🍲",
+      "tag": "Kitchen favourite",
+      "description": "Pembantu dapur untuk meneroka resipi harian.",
+      "url": "https://www.vorwerk.com/my/en/c/home",
+      "image": ""
+    },
+    {
+      "id": "home-02",
+      "title": "Kitchen Essentials",
+      "category": "home",
+      "icon": "🥣",
+      "tag": "Kitchen",
+      "description": "Peralatan praktikal untuk rutin memasak.",
+      "url": "https://example.com/affiliate-02",
+      "image": ""
+    },
+    {
+      "id": "home-03",
+      "title": "Meal Prep Tools",
+      "category": "home",
+      "icon": "🥗",
+      "tag": "Everyday use",
+      "description": "Bantu persediaan makanan jadi lebih teratur.",
+      "url": "https://example.com/affiliate-03",
+      "image": ""
+    },
+    {
+      "id": "home-04",
+      "title": "Home Organisation",
+      "category": "home",
+      "icon": "🗂️",
+      "tag": "Home",
+      "description": "Idea menyusun ruang supaya lebih kemas.",
+      "url": "https://example.com/affiliate-04",
+      "image": ""
+    },
+    {
+      "id": "home-05",
+      "title": "Smart Home Picks",
+      "category": "home",
+      "icon": "💡",
+      "tag": "Smart living",
+      "description": "Pilihan kecil untuk kehidupan harian yang mudah.",
+      "url": "https://example.com/affiliate-05",
+      "image": ""
+    },
+    {
+      "id": "home-06",
+      "title": "Cleaning Favourites",
+      "category": "home",
+      "icon": "🫧",
+      "tag": "Home care",
+      "description": "Barangan pilihan untuk rutin penjagaan rumah.",
+      "url": "https://example.com/affiliate-06",
+      "image": ""
+    },
+    {
+      "id": "digital-01",
+      "title": "AI Creative Tools",
+      "category": "digital",
+      "icon": "✦",
+      "tag": "AI tools",
+      "description": "Teroka alat digital untuk idea dan aliran kerja kreatif.",
+      "url": "https://example.com/affiliate-01",
+      "image": ""
+    },
+    {
+      "id": "digital-02",
+      "title": "Design Resources",
+      "category": "digital",
+      "icon": "🎨",
+      "tag": "Design",
+      "description": "Sumber untuk membantu projek visual anda.",
+      "url": "https://example.com/affiliate-02",
+      "image": ""
+    },
+    {
+      "id": "digital-03",
+      "title": "Creator Toolkit",
+      "category": "digital",
+      "icon": "🧰",
+      "tag": "Creator",
+      "description": "Tools untuk merancang dan menghasilkan kandungan.",
+      "url": "https://example.com/affiliate-03",
+      "image": ""
+    },
+    {
+      "id": "digital-04",
+      "title": "Photo Editing Tools",
+      "category": "digital",
+      "icon": "📷",
+      "tag": "Photography",
+      "description": "Pilihan untuk memperkemas foto dan visual.",
+      "url": "https://example.com/affiliate-04",
+      "image": ""
+    },
+    {
+      "id": "digital-05",
+      "title": "Website & Hosting",
+      "category": "digital",
+      "icon": "🌐",
+      "tag": "Web tools",
+      "description": "Sumber untuk membina kehadiran digital.",
+      "url": "https://example.com/affiliate-05",
+      "image": ""
+    },
+    {
+      "id": "digital-06",
+      "title": "AI Learning Resources",
+      "category": "digital",
+      "icon": "🤖",
+      "tag": "Learn AI",
+      "description": "Bahan untuk meneroka kreativiti berasaskan AI.",
+      "url": "https://example.com/affiliate-06",
+      "image": ""
+    },
+    {
+      "id": "life-01",
+      "title": "Lifestyle Finds",
+      "category": "lifestyle",
+      "icon": "💜",
+      "tag": "Daily picks",
+      "description": "Pilihan berguna untuk rutin dan gaya hidup.",
+      "url": "https://example.com/affiliate-01",
+      "image": ""
+    },
+    {
+      "id": "life-02",
+      "title": "Bag & Accessories",
+      "category": "lifestyle",
+      "icon": "👜",
+      "tag": "Accessories",
+      "description": "Aksesori untuk melengkapkan gaya harian.",
+      "url": "https://example.com/affiliate-02",
+      "image": ""
+    },
+    {
+      "id": "life-03",
+      "title": "Personal Care Picks",
+      "category": "lifestyle",
+      "icon": "🪞",
+      "tag": "Self-care",
+      "description": "Pilihan untuk rutin penjagaan diri.",
+      "url": "https://example.com/affiliate-03",
+      "image": ""
+    },
+    {
+      "id": "life-04",
+      "title": "Gift Ideas",
+      "category": "lifestyle",
+      "icon": "🎁",
+      "tag": "Gift guide",
+      "description": "Inspirasi hadiah untuk pelbagai kesempatan.",
+      "url": "https://example.com/affiliate-04",
+      "image": ""
+    },
+    {
+      "id": "life-05",
+      "title": "Travel Essentials",
+      "category": "lifestyle",
+      "icon": "🧳",
+      "tag": "Travel",
+      "description": "Barangan berguna untuk perjalanan dan aktiviti.",
+      "url": "https://example.com/affiliate-05",
+      "image": ""
+    },
+    {
+      "id": "life-06",
+      "title": "My Favourite Finds",
+      "category": "lifestyle",
+      "icon": "💎",
+      "tag": "Curated",
+      "description": "Pilihan peribadi yang ingin dikongsi dengan anda.",
+      "url": "https://example.com/affiliate-06",
+      "image": ""
+    }
+  ]
+}
