@@ -25,68 +25,60 @@ footer{border-top:1px solid #ffffff12;padding:24px 0 34px;color:var(--muted);fon
 @media(max-width:850px){.hero{grid-template-columns:1fr;gap:28px;padding-top:55px}.orb-wrap{min-height:280px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{display:none}.stats{margin-bottom:44px}.social{align-items:flex-start;flex-direction:column}}
 @media(max-width:520px){.wrap{width:min(100% - 24px,1180px)}.nav{height:66px} 
                         
-.brand-logo {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+
+/* EMERGENCY FIX: LOGO HEADER */
+header .nav .brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  position: static !important;
 }
 
-.brand-logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+header .nav .brand .brand-logo {
+  display: flex !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  max-width: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  flex: 0 0 42px !important;
+  overflow: hidden !important;
+  position: relative !important;
 }
 
-.brand-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
+header .nav .brand .brand-logo img {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  transform: none !important;
 }
 
-.brand-name {
-  display: block;
-  color: #f4f6ff;
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
-
-.brand-name span {
-  color: #54f5ff;
-}
-
-.brand-info small {
-  display: block;
-  color: #9ca7bf;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  margin-top: 2px;
+header .nav {
+  height: 76px !important;
+  min-height: 66px !important;
+  max-height: 90px !important;
+  overflow: visible !important;
 }
 
 @media (max-width: 520px) {
-  .brand-logo {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
-  }
-
-  .brand-name {
-    font-size: 14px;
-  }
-
-  .brand-info small {
-    font-size: 9px;
-  }
-
-  .brand {
-    gap: 8px;
+  header .nav .brand .brand-logo {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    flex-basis: 36px !important;
   }
 }
 
