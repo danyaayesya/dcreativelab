@@ -29,10 +29,22 @@ footer{border-top:1px solid #ffffff12;padding:24px 0 34px;color:var(--muted);fon
 </head>
 <body>
 <header><div class="wrap nav">
-  <a class="brand" href="#" aria-label="DCreativelab Studio home"> <span>DCreativelab<small>STUDIO / DIGITAL FINDS</small></span></a>
- <div class="logo-icon">
-  <img src="images/logo.png" alt="DCreativelab Studio Logo">
-</div>
+  <a class="brand" href="#" aria-label="DCreativelab Studio home"> <span> class="logo-icon"> <img src="images/logo.png" alt="DCreativelab Studio Logo"></img> </span> 
+    <span>DCreativelab<small>STUDIO / DIGITAL FINDS</small></span></a>
+
+  .logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
   
   <nav class="navlinks" aria-label="Main navigation"><a href="#discover">Discover</a><a href="#categories">Categories</a><a href="#social">Connect</a></nav>
   <a class="nav-cta" href="#discover">Explore finds ↗</a>
