@@ -236,6 +236,35 @@ footer span { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
 }
+
+  
+.product-image {
+  display: block;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin: 0 0 14px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+  background: #0B1220;
+  border: 1px solid #29374B;
+}
+
+.image-error {
+  color: #FF9A9A;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .product-image {
+    height: 120px;
+    padding: 8px;
+  }
+}
+
+  
 </style>
 </head>
 <body>
@@ -277,7 +306,7 @@ footer span { color: var(--accent); }
 
 <script>
 /* EDIT NAMA, KATEGORI DAN URL DI SINI */
-const links = [
+/*const links = [
   {name:"Nota Kafa Jakim", category:"Education",
    url:"https://pesanabi.com/order/form/NotaKafa/1281", image: "images/notakafa.png"},
   {name:" PROMOSI 50% DISKAUN! Video Silibus KAFA JAKIM ", category:"Education",
@@ -302,7 +331,30 @@ const links = [
    url:"https://example.com/11", symbol:"DT"},
   {name:"My Favourite Finds", category:"Lifestyle",
    url:"https://example.com/12", symbol:"MF"}
+];*/
+
+  
+const links = [
+  {
+    name: "Nota Kafa Jakim",
+    category: "Education",
+    url: "https://pesanabi.com/order/form/NotaKafa/1281",
+    image: "images/notakafa.png"
+  },
+  {
+    name: "Design Tools",
+    category: "Creative",
+    url: "https://example.com",
+    image: "images/design-tools.png"
+  },
+  {
+    name: "Learning Resources",
+    category: "Education",
+    url: "https://example.com",
+    image: "images/learning-resources.png"
+  }
 ];
+
 
 const grid = document.getElementById("grid");
 const filters = document.getElementById("filters");
@@ -329,55 +381,85 @@ categories.forEach(category => {
   filters.appendChild(button);
 });
 
-function render() {
+f/*unction render() {
   const query = search.value.trim().toLowerCase();
   const results = links.filter(link =>
     (active === "All" || link.category === active) &&
     (link.name + " " + link.category).toLowerCase()
       .includes(query)
+  );*/
+
+  
+function render() {
+  const query = search.value.trim().toLowerCase();
+
+  const results = links.filter(link =>
+    (active === "All" || link.category === active) &&
+    (link.name + " " + link.category)
+      .toLowerCase().includes(query)
   );
 
   grid.replaceChildren();
 
-  
-results.forEach(link => {
-  const card = document.createElement("a");
-  card.className = "item";
-  card.href = link.url;
-  card.target = "_blank";
-  card.rel = "noopener noreferrer";
+  results.forEach(link => {
+    const card = document.createElement("a");
+    card.className = "item";
+    card.href = link.url;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
 
-  // Gambar produk affiliate
-  const image = document.createElement("img");
-  image.className = "product-image";
-  image.src = link.image;
-  image.alt = link.name;
-  image.loading = "lazy";
+    // IMAGE PRODUK
+    const image = document.createElement("img");
+    image.className = "product-image";
+    image.alt = link.name;
+    image.src = link.image || "";
+    image.loading = "lazy";
 
-  // Nama produk
-  const title = document.createElement("h3");
-  title.textContent = link.name;
+    // Jika gambar gagal dimuatkan, tunjukkan sebab
+    image.onerror = function () {
+      this.removeAttribute("src");
+      this.alt = "Gambar tidak dijumpai: " + link.name;
+      this.classList.add("image-error");
+    };
 
-  // Kategori produk
-  const category = document.createElement("div");
-  category.className = "category";
-  category.textContent = link.category;
+    // Bahagian atas panel
+    const top = document.createElement("div");
+    top.className = "item-top";
 
-  // Ikon pautan
-  const arrow = document.createElement("span");
-  arrow.className = "arrow";
-  arrow.textContent = "↗";
-  arrow.setAttribute("aria-hidden", "true");
+    const arrow = document.createElement("span");
+    arrow.className = "arrow";
+    arrow.textContent = "↗";
+    arrow.setAttribute("aria-hidden", "true");
+    top.appendChild(arrow);
 
-  const top = document.createElement("div");
-  top.className = "item-top";
-  top.appendChild(arrow);
+    // Nama produk
+    const title = document.createElement("h3");
+    title.textContent = link.name;
 
-  card.append(image, top, title, category);
-  grid.appendChild(card);
-});
+    // Kategori
+    const category = document.createElement("div");
+    category.className = "category";
+    category.textContent = link.category;
 
-  /*results.forEach(link => {
+    // Susunan elemen panel
+    card.appendChild(image);
+    card.appendChild(top);
+    card.appendChild(title);
+    card.appendChild(category);
+
+    grid.appendChild(card);
+  });
+
+  count.textContent = results.length + " links";
+  empty.style.display = results.length ? "none" : "block";
+}
+
+
+  /*grid.replaceChildren();
+
+ 
+
+ results.forEach(link => {
     const card = document.createElement("a");
     card.className = "item";
     card.href = link.url;
@@ -416,15 +498,7 @@ search.addEventListener("input", render);
 render();
 </script>
 
-    .logo {
-  display: block;
-  width: 116px;
-  max-width: 36%;
-  max-height: 90px;
-  height: auto;
-  object-fit: contain;
-  margin: 0 auto 18px;
-}
+
 </body>
 
 
