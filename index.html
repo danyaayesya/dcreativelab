@@ -339,7 +339,45 @@ function render() {
 
   grid.replaceChildren();
 
-  results.forEach(link => {
+  
+results.forEach(link => {
+  const card = document.createElement("a");
+  card.className = "item";
+  card.href = link.url;
+  card.target = "_blank";
+  card.rel = "noopener noreferrer";
+
+  // Gambar produk affiliate
+  const image = document.createElement("img");
+  image.className = "product-image";
+  image.src = link.image;
+  image.alt = link.name;
+  image.loading = "lazy";
+
+  // Nama produk
+  const title = document.createElement("h3");
+  title.textContent = link.name;
+
+  // Kategori produk
+  const category = document.createElement("div");
+  category.className = "category";
+  category.textContent = link.category;
+
+  // Ikon pautan
+  const arrow = document.createElement("span");
+  arrow.className = "arrow";
+  arrow.textContent = "↗";
+  arrow.setAttribute("aria-hidden", "true");
+
+  const top = document.createElement("div");
+  top.className = "item-top";
+  top.appendChild(arrow);
+
+  card.append(image, top, title, category);
+  grid.appendChild(card);
+});
+
+  /*results.forEach(link => {
     const card = document.createElement("a");
     card.className = "item";
     card.href = link.url;
@@ -372,7 +410,7 @@ function render() {
 
   count.textContent = results.length + " links";
   empty.style.display = results.length ? "none" : "block";
-}
+}*/
 
 search.addEventListener("input", render);
 render();
