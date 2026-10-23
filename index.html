@@ -23,66 +23,37 @@ header{position:sticky;top:0;z-index:10;border-bottom:1px solid #ffffff12;backgr
 footer{border-top:1px solid #ffffff12;padding:24px 0 34px;color:var(--muted);font-size:11px}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.foot strong{color:var(--text)}.disclosure{max-width:780px;margin-top:12px;color:#78839a}
 .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:20;background:#151c2b;border:1px solid #54f5ff44;padding:11px 16px;border-radius:12px;color:var(--text);font-size:12px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:850px){.hero{grid-template-columns:1fr;gap:28px;padding-top:55px}.orb-wrap{min-height:280px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{display:none}.stats{margin-bottom:44px}.social{align-items:flex-start;flex-direction:column}}
-@media(max-width:520px){.wrap{width:min(100% - 24px,1180px)}.nav{height:66px} 
-                        
+/* Header brand and logo: fixed size on desktop and mobile */
+.brand{flex:0 1 auto;min-width:0;max-width:100%;gap:10px;}
+.brand-logo{display:block;flex:0 0 42px;width:42px;height:42px;min-width:42px;max-width:42px;overflow:hidden;border-radius:12px;}
+.brand-logo img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;position:static;padding:0;margin:0;transform:none;}
+.brand-info{display:block;min-width:0;line-height:1.2;}
+.brand-name{display:block;font-size:16px;white-space:nowrap;letter-spacing:-.04em;}
+.brand-name span{color:var(--cyan);}
+.brand-info small{display:block;color:var(--muted);font-size:9px;letter-spacing:.12em;font-weight:700;margin-top:4px;white-space:nowrap;}
 
-/* EMERGENCY FIX: LOGO HEADER */
-header .nav .brand {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  width: auto !important;
-  max-width: 100% !important;
-  height: auto !important;
-  position: static !important;
+@media(max-width:520px){
+  .wrap{width:min(100% - 24px,1180px)}
+  .nav{height:66px;gap:8px}
+  .brand{gap:8px}
+  .brand-logo{flex-basis:36px;width:36px;height:36px;min-width:36px;max-width:36px;}
+  .brand-name{font-size:14px;}
+  .brand-info small{font-size:8px;letter-spacing:.08em;}
+  .nav-cta{padding:9px 10px;font-size:10px;white-space:nowrap}
+  .hero{padding-top:42px}
+  .hero p{font-size:14px}
+  .orb-wrap{min-height:250px}
+  .float-label{font-size:10px;padding:8px 10px}
+  .fl1{left:4%}.fl2{right:4%}.fl3{left:5%}.fl4{right:4%}
+  .stats{gap:7px}.stat{padding:12px}.stat strong{font-size:19px}.stat span{font-size:10px}
+  .section-head{align-items:flex-start;flex-direction:column}
+  .featured-card{grid-template-columns:1fr}.feature-art{min-height:140px}.feature-copy{padding:22px}.feature-copy h3{font-size:23px}
+  .tools{align-items:stretch;flex-direction:column}
+  .grid{gap:10px}.product-art{height:105px}.product-art span{font-size:36px}
+  .product-body{padding:12px}.product-body h3{font-size:14px}.product-body p{font-size:11px;min-height:50px}
+  .product-foot{align-items:flex-start;flex-direction:column}.visit{width:100%}
+  .social{padding:22px}.social-links a{padding:10px;font-size:11px}
 }
-
-header .nav .brand .brand-logo {
-  display: flex !important;
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  max-width: 42px !important;
-  min-height: 42px !important;
-  max-height: 42px !important;
-  flex: 0 0 42px !important;
-  overflow: hidden !important;
-  position: relative !important;
-}
-
-header .nav .brand .brand-logo img {
-  display: block !important;
-  position: static !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  min-height: 0 !important;
-  max-height: 100% !important;
-  object-fit: contain !important;
-  transform: none !important;
-}
-
-header .nav {
-  height: 76px !important;
-  min-height: 66px !important;
-  max-height: 90px !important;
-  overflow: visible !important;
-}
-
-@media (max-width: 520px) {
-  header .nav .brand .brand-logo {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    max-width: 36px !important;
-    min-height: 36px !important;
-    max-height: 36px !important;
-    flex-basis: 36px !important;
-  }
-}
-
-                        .nav-cta{padding:10px 12px;font-size:11px}.hero{padding-top:42px}.hero p{font-size:14px}.orb-wrap{min-height:250px}.float-label{font-size:10px;padding:8px 10px}.fl1{left:4%}.fl2{right:4%}.fl3{left:5%}.fl4{right:4%}.stats{gap:7px}.stat{padding:12px}.stat strong{font-size:19px}.stat span{font-size:10px}.section-head{align-items:flex-start;flex-direction:column}.featured-card{grid-template-columns:1fr}.feature-art{min-height:140px}.feature-copy{padding:22px}.feature-copy h3{font-size:23px}.tools{align-items:stretch;flex-direction:column}.grid{gap:10px}.product-art{height:105px}.product-art span{font-size:36px}.product-body{padding:12px}.product-body h3{font-size:14px}.product-body p{font-size:11px;min-height:50px}.product-foot{align-items:flex-start;flex-direction:column}.visit{width:100%}.social{padding:22px}.social-links a{padding:10px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
@@ -208,20 +179,4 @@ document.querySelector("#year").textContent=new Date().getFullYear();
 loadProducts();
 </script>
 </body>
-
-  
-.feature-art {
-  overflow: hidden;
-}
-
-.feature-art img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  padding: 12px;
-  position: relative;
-  z-index: 1;
-}
-
-  
 </html>
