@@ -66,10 +66,26 @@ header {
   color: var(--muted);
   letter-spacing: .5px;
 }
-.hero {
+/*.hero {
   text-align: center;
   padding: 18px 0 32px;
+}*/
+
+  .hero {
+  display: none;
 }
+
+header {
+  padding-bottom: 24px;
+}
+
+.grid {
+  margin-top: 0;
+}
+
+
+
+  
 .eyebrow {
   color: var(--accent);
   font-size: 10px;
@@ -283,21 +299,13 @@ footer span { color: var(--accent); }
   </section>
 
   <main>
-    <div class="toolbar">
-      <input id="search" class="search" type="search"
-        placeholder="Search collection..."
-        aria-label="Search collection">
-      <div class="count" id="count"></div>
-    </div>
 
-    <nav class="filters" id="filters"
-         aria-label="Filter categories"></nav>
 
     <div class="grid" id="grid"></div>
     <div class="empty" id="empty">
       Nothing found. Try another search.
     </div>
-  </main>
+  </main> 
 
   <footer>
     <span>DCREATIVELAB STUDIO</span>
@@ -345,7 +353,7 @@ const links = [
     name: "PROMOSI 50% DISKAUN! Video Silibus KAFA JAKIM",
     category: "Education",
     url: "https://pesanabi.com/order/form/VideoKafaByTahun/1281",
-    image: "videokafa.png"
+    image: "image/videokafa.png"
   },
   {
     name: "100 Video Kuiz Pengetahuan Am Untuk Anak-Anak 6-15 Tahun",
@@ -356,146 +364,51 @@ const links = [
 ];
 
 
+
 const grid = document.getElementById("grid");
-const filters = document.getElementById("filters");
-const search = document.getElementById("search");
-const count = document.getElementById("count");
-const empty = document.getElementById("empty");
-let active = "All";
 
-const categories = ["All", ...new Set(links.map(x => x.category))];
-
-categories.forEach(category => {
-  const button = document.createElement("button");
-  button.className = "filter" +
-    (category === active ? " active" : "");
-  button.textContent = category;
-  button.type = "button";
-  button.onclick = () => {
-    active = category;
-    filters.querySelectorAll("button").forEach(b =>
-      b.classList.toggle("active", b.textContent === active)
-    );
-    render();
-  };
-  filters.appendChild(button);
-});
-
-f/*unction render() {
-  const query = search.value.trim().toLowerCase();
-  const results = links.filter(link =>
-    (active === "All" || link.category === active) &&
-    (link.name + " " + link.category).toLowerCase()
-      .includes(query)
-  );*/
-
-  
 function render() {
-  const query = search.value.trim().toLowerCase();
-
-  const results = links.filter(link =>
-    (active === "All" || link.category === active) &&
-    (link.name + " " + link.category)
-      .toLowerCase().includes(query)
-  );
-
   grid.replaceChildren();
 
-  results.forEach(link => {
+  links.forEach(link => {
     const card = document.createElement("a");
     card.className = "item";
     card.href = link.url;
     card.target = "_blank";
     card.rel = "noopener noreferrer";
 
-    // IMAGE PRODUK
     const image = document.createElement("img");
     image.className = "product-image";
-    image.alt = link.name;
     image.src = link.image || "";
+    image.alt = link.name;
     image.loading = "lazy";
 
-    // Jika gambar gagal dimuatkan, tunjukkan sebab
     image.onerror = function () {
-      this.removeAttribute("src");
-      this.alt = "Gambar tidak dijumpai: " + link.name;
       this.classList.add("image-error");
     };
 
-    // Bahagian atas panel
     const top = document.createElement("div");
     top.className = "item-top";
 
     const arrow = document.createElement("span");
     arrow.className = "arrow";
     arrow.textContent = "↗";
-    arrow.setAttribute("aria-hidden", "true");
     top.appendChild(arrow);
 
-    // Nama produk
     const title = document.createElement("h3");
     title.textContent = link.name;
 
-    // Kategori
     const category = document.createElement("div");
     category.className = "category";
     category.textContent = link.category;
 
-    // Susunan elemen panel
-    card.appendChild(image);
-    card.appendChild(top);
-    card.appendChild(title);
-    card.appendChild(category);
-
+    card.append(image, top, title, category);
     grid.appendChild(card);
   });
-
-  count.textContent = results.length + " links";
-  empty.style.display = results.length ? "none" : "block";
 }
 
-
-  /*grid.replaceChildren();
-
- 
-
- results.forEach(link => {
-    const card = document.createElement("a");
-    card.className = "item";
-    card.href = link.url;
-    card.target = "_blank";
-    card.rel = "noopener noreferrer";
-
-    const top = document.createElement("div");
-    top.className = "item-top";
-
-    const symbol = document.createElement("span");
-    symbol.className = "symbol";
-    symbol.textContent = link.symbol || "↗";
-
-    const arrow = document.createElement("span");
-    arrow.className = "arrow";
-    arrow.textContent = "↗";
-    arrow.setAttribute("aria-hidden", "true");
-
-    const title = document.createElement("h3");
-    title.textContent = link.name;
-
-    const category = document.createElement("div");
-    category.className = "category";
-    category.textContent = link.category;
-
-    top.append(symbol, arrow);
-    card.append(top, title, category);
-    grid.appendChild(card);
-  });
-
-  count.textContent = results.length + " links";
-  empty.style.display = results.length ? "none" : "block";
-}*/
-
-search.addEventListener("input", render);
 render();
+
 </script>
 
 
