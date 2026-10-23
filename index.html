@@ -2,312 +2,383 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#F7F6F0">
-  <meta name="description" content="Discover creative tools, educational resources and curated affiliate finds at DCreativelab Studio.">
-  <title>DCreativelab Studio</title>
-
-  <style>
-    :root {
-      --cream: #F7F6F0;
-      --white: #FFFFFF;
-      --sage: #A8B5A0;
-      --green: #35483C;
-      --muted: #747B71;
-      --line: #E3E5DB;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
-      color: var(--green);
-      min-height: 100vh;
-    }
-
-    .container {
-      width: min(100% - 32px, 960px);
-      margin: auto;
-    }
-
-    header {
-      text-align: center;
-      padding: 48px 0 30px;
-    }
-
-    .logo {
-      display: block;
-      width: 140px;
-      max-width: 40%;
-      height: auto;
-      max-height: 110px;
-      object-fit: contain;
-      margin: 0 auto 18px;
-    }
-
-    .brand-name {
-      font-size: clamp(23px, 4vw, 32px);
-      font-weight: 700;
-      letter-spacing: -0.8px;
-      margin: 0;
-    }
-
-    .tagline {
-      font-size: 14px;
-      color: var(--muted);
-      margin: 10px 0 0;
-      letter-spacing: 0.3px;
-    }
-
-    .intro {
-      margin: 12px 0 24px;
-      font-size: 14px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .search {
-      display: block;
-      width: 100%;
-      max-width: 480px;
-      margin: 0 auto 32px;
-      padding: 14px 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--white);
-      color: var(--green);
-      font-size: 14px;
-      outline: none;
-    }
-
-    .search:focus {
-      border-color: var(--sage);
-      box-shadow: 0 0 0 3px #A8B5A022;
-    }
-
-    .section-title {
-      font-size: 17px;
-      margin: 0 0 16px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      display: block;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s, border-color 0.2s,
-                  box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: var(--sage);
-      box-shadow: 0 8px 24px #35483C0D;
-    }
-
-    .card-icon {
-      display: inline-flex;
-      width: 44px;
-      height: 44px;
-      border-radius: 13px;
-      align-items: center;
-      justify-content: center;
-      background: #E9EDE4;
-      font-size: 22px;
-      margin-bottom: 14px;
-    }
-
-    .card h3 {
-      font-size: 16px;
-      margin: 0 0 7px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-      margin: 0 0 16px;
-    }
-
-    .explore {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--green);
-    }
-
-    .empty {
-      display: none;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      padding: 24px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0 26px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    footer a {
-      color: var(--green);
-      text-decoration: none;
-    }
-
-    @media (max-width: 520px) {
-      header {
-        padding-top: 34px;
-      }
-
-      .logo {
-        width: 112px;
-        max-width: 38%;
-        max-height: 85px;
-      }
-
-      .grid {
-        gap: 11px;
-      }
-
-      .card {
-        padding: 16px;
-        border-radius: 15px;
-      }
-
-      .card h3 {
-        font-size: 14px;
-      }
-
-      .card p {
-        font-size: 12px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        transition: none !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090D16">
+<title>DCreativelab Studio</title>
+<style>
+:root {
+  --bg: #090D16;
+  --panel: #111927;
+  --panel2: #151F30;
+  --border: #29374B;
+  --text: #F2F5FA;
+  --muted: #8999AF;
+  --accent: #69E7D4;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 0%,
+      #173E4840, transparent 48%),
+    radial-gradient(ellipse at 100% 60%,
+      #34305B18, transparent 38%);
+}
+.container {
+  width: min(1080px, calc(100% - 36px));
+  margin: auto;
+}
+header {
+  text-align: center;
+  padding: 42px 0 30px;
+}
+.logo {
+  display: block;
+  width: 116px;
+  max-width: 36%;
+  max-height: 90px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 18px;
+}
+.brand {
+  margin: 0;
+  font-size: clamp(25px, 4vw, 34px);
+  letter-spacing: -1px;
+  font-weight: 750;
+}
+.brand span { color: var(--accent); }
+.tagline {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: .5px;
+}
+.hero {
+  text-align: center;
+  padding: 18px 0 32px;
+}
+.eyebrow {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.hero h2 {
+  font-size: clamp(25px, 4vw, 40px);
+  letter-spacing: -1.3px;
+  margin: 15px 0 8px;
+}
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.search {
+  min-width: 0;
+  flex: 1;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  outline: none;
+}
+.search:focus { border-color: var(--accent); }
+.count {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 12px;
+}
+.filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 0 18px;
+  scrollbar-width: thin;
+}
+.filter {
+  border: 1px solid var(--border);
+  color: #B7C4D5;
+  background: transparent;
+  border-radius: 30px;
+  padding: 9px 15px;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: .2s;
+}
+.filter:hover, .filter.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #071512;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(145deg,
+    #141E2D, #0E1521);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .22s, border-color .22s,
+              box-shadow .22s;
+}
+.item::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -55px;
+  top: -55px;
+  border-radius: 50%;
+  background: #69E7D410;
+  transition: .22s;
+}
+.item:hover {
+  transform: translateY(-3px);
+  border-color: #69E7D4A0;
+  box-shadow: 0 8px 28px #00000035,
+              0 0 18px #69E7D410;
+}
+.item:hover::after { background: #69E7D425; }
+.item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.symbol {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #69E7D415;
+  border: 1px solid #69E7D425;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 750;
+}
+.arrow { color: #8293AA; font-size: 18px; }
+.item h3 {
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.4;
+  margin: 18px 0 8px;
+  overflow-wrap: anywhere;
+}
+.category {
+  margin-top: auto;
+  padding-top: 5px;
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.empty {
+  display: none;
+  text-align: center;
+  padding: 40px 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+footer {
+  text-align: center;
+  padding: 40px 0 24px;
+  font-size: 11px;
+  color: #68788D;
+  letter-spacing: .5px;
+}
+footer span { color: var(--accent); }
+@media (max-width: 680px) {
+  .container { width: calc(100% - 28px); }
+  header { padding-top: 32px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .item { padding: 15px; min-height: 138px; }
+  .item h3 { font-size: 13px; margin-top: 14px; }
+  .toolbar { gap: 8px; }
+}
+@media (max-width: 360px) {
+  .grid { gap: 8px; }
+  .item { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
 </head>
-
 <body>
-  <div class="container">
+<div class="container">
 
-    <header>
-      <img class="logo" src="logo.png"
-           alt="DCreativelab Studio"
-           onerror="this.style.display='none'">
+  <header>
+    <img src="logo.png" class="logo"
+         alt="DCreativelab Studio"
+         onerror="this.hidden=true">
+    <h1 class="brand">DCreativelab <span>Studio</span></h1>
+    <p class="tagline">Connecting Creativity &amp; Education</p>
+  </header>
 
-      <h1 class="brand-name">DCreativelab Studio</h1>
-      <p class="tagline">Connecting Creativity &amp; Education</p>
-    </header>
+  <section class="hero">
+    <div class="eyebrow">YOUR DIGITAL DISCOVERY SPACE</div>
+    <h2>Find Your Next Favourite.</h2>
+    <p>A collection of tools, resources and discoveries.</p>
+  </section>
 
-    <p class="intro">Explore my collection of useful finds.</p>
+  <main>
+    <div class="toolbar">
+      <input id="search" class="search" type="search"
+        placeholder="Search collection..."
+        aria-label="Search collection">
+      <div class="count" id="count"></div>
+    </div>
 
-    <input
-      class="search"
-      id="search"
-      type="search"
-      placeholder="Search links..."
-      aria-label="Search affiliate links">
+    <nav class="filters" id="filters"
+         aria-label="Filter categories"></nav>
 
-    <main>
-      <h2 class="section-title">Explore Collection</h2>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">
+      Nothing found. Try another search.
+    </div>
+  </main>
 
-      <div class="grid" id="linkGrid">
+  <footer>
+    <span>DCREATIVELAB STUDIO</span>
+    <br>© 2026 · Some links may be affiliate links.
+  </footer>
+</div>
 
-        <!-- GANTI # DENGAN LINK SEBENAR -->
+<script>
+/* EDIT NAMA, KATEGORI DAN URL DI SINI */
+const links = [
+  {name:"Nota Pembelajaran", category:"Education",
+   url:"https://example.com/01", symbol:"ED"},
+  {name:"Aktiviti Kanak-kanak", category:"Education",
+   url:"https://example.com/02", symbol:"AK"},
+  {name:"Bahan Ulang Kaji", category:"Education",
+   url:"https://example.com/03", symbol:"BR"},
+  {name:"AI Design Tools", category:"Tech & AI",
+   url:"https://example.com/04", symbol:"AI"},
+  {name:"Creative Software", category:"Creative",
+   url:"https://example.com/05", symbol:"CR"},
+  {name:"Digital Resources", category:"Tech & AI",
+   url:"https://example.com/06", symbol:"DR"},
+  {name:"Thermomix", category:"Lifestyle",
+   url:"https://example.com/07", symbol:"TM"},
+  {name:"Photography Gear", category:"Creative",
+   url:"https://example.com/08", symbol:"PH"},
+  {name:"Home Essentials", category:"Lifestyle",
+   url:"https://example.com/09", symbol:"HM"},
+  {name:"Learning Toys", category:"Education",
+   url:"https://example.com/10", symbol:"LT"},
+  {name:"Design Templates", category:"Creative",
+   url:"https://example.com/11", symbol:"DT"},
+  {name:"My Favourite Finds", category:"Lifestyle",
+   url:"https://example.com/12", symbol:"MF"}
+];
 
-        <a class="card" href="#"
-           target="_blank" rel="noopener noreferrer"
-           data-search="education pendidikan nota belajar">
-          <span class="card-icon">📚</span>
-          <h3>Education</h3>
-          <p>Learning resources, study notes &amp; more.</p>
-          <span class="explore">Explore links ↗</span>
-        </a>
+const grid = document.getElementById("grid");
+const filters = document.getElementById("filters");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+const empty = document.getElementById("empty");
+let active = "All";
 
-        <a class="card" href="#"
-           target="_blank" rel="noopener noreferrer"
-           data-search="creative kreativiti design art">
-          <span class="card-icon">🎨</span>
-          <h3>Creative</h3>
-          <p>Creative tools, design resources &amp; ideas.</p>
-          <span class="explore">Explore links ↗</span>
-        </a>
+const categories = ["All", ...new Set(links.map(x => x.category))];
 
-        <a class="card" href="#"
-           target="_blank" rel="noopener noreferrer"
-           data-search="tech teknologi ai digital apps">
-          <span class="card-icon">💻</span>
-          <h3>Tech &amp; AI</h3>
-          <p>Digital tools, AI platforms &amp; useful apps.</p>
-          <span class="explore">Explore links ↗</span>
-        </a>
+categories.forEach(category => {
+  const button = document.createElement("button");
+  button.className = "filter" +
+    (category === active ? " active" : "");
+  button.textContent = category;
+  button.type = "button";
+  button.onclick = () => {
+    active = category;
+    filters.querySelectorAll("button").forEach(b =>
+      b.classList.toggle("active", b.textContent === active)
+    );
+    render();
+  };
+  filters.appendChild(button);
+});
 
-        <a class="card" href="#"
-           target="_blank" rel="noopener noreferrer"
-           data-search="my picks produk pilihan affiliate">
-          <span class="card-icon">🛍️</span>
-          <h3>My Picks</h3>
-          <p>Products and useful finds worth exploring.</p>
-          <span class="explore">Explore links ↗</span>
-        </a>
+function render() {
+  const query = search.value.trim().toLowerCase();
+  const results = links.filter(link =>
+    (active === "All" || link.category === active) &&
+    (link.name + " " + link.category).toLowerCase()
+      .includes(query)
+  );
 
-      </div>
+  grid.replaceChildren();
 
-      <p class="empty" id="empty">
-        No links found. Try another keyword.
-      </p>
-    </main>
+  results.forEach(link => {
+    const card = document.createElement("a");
+    card.className = "item";
+    card.href = link.url;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
 
-    <footer>
-      <div>Connecting Creativity &amp; Education</div>
-      <div>© 2026 DCreativelab Studio</div>
-      <div>Some links may be affiliate links.</div>
-    </footer>
+    const top = document.createElement("div");
+    top.className = "item-top";
 
-  </div>
+    const symbol = document.createElement("span");
+    symbol.className = "symbol";
+    symbol.textContent = link.symbol || "↗";
 
-  <script>
-    const search = document.getElementById("search");
-    const cards = [...document.querySelectorAll(".card")];
-    const empty = document.getElementById("empty");
+    const arrow = document.createElement("span");
+    arrow.className = "arrow";
+    arrow.textContent = "↗";
+    arrow.setAttribute("aria-hidden", "true");
 
-    search.addEventListener("input", () => {
-      const query = search.value.trim().toLowerCase();
-      let visible = 0;
+    const title = document.createElement("h3");
+    title.textContent = link.name;
 
-      cards.forEach(card => {
-        const text = (
-          card.innerText + " " +
-          card.dataset.search
-        ).toLowerCase();
+    const category = document.createElement("div");
+    category.className = "category";
+    category.textContent = link.category;
 
-        const match = text.includes(query);
-        card.hidden = !match;
-        if (match) visible++;
-      });
+    top.append(symbol, arrow);
+    card.append(top, title, category);
+    grid.appendChild(card);
+  });
 
-      empty.style.display = visible ? "none" : "block";
-    });
-  </script>
+  count.textContent = results.length + " links";
+  empty.style.display = results.length ? "none" : "block";
+}
+
+search.addEventListener("input", render);
+render();
+</script>
 </body>
 </html>
